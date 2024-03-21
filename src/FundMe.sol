@@ -10,7 +10,7 @@ contract FundMe {
     using PriceConverter for uint256;
 
     // Could we make this constant?  /* hint: no! We should make it immutable! */
-    address public immutable i_owner;
+    address private immutable i_owner;
     uint256 public constant MINIMUM_USD = 5 * 10 ** 18;
 
     mapping(address => uint256) private s_addressToAmountFunded;
@@ -99,6 +99,10 @@ contract FundMe {
 
     function getFunder(uint256 index) public view returns (address) {
         return s_funders[index];
+    }
+
+    function getOwner() public view returns (address) {
+        return i_owner;
     }
 }
 
