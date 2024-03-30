@@ -114,3 +114,5 @@ contract FundMe {
 // 5. abi.encode / decode
 // 6. Hash with keccak256
 // 7. Yul / Assembly
+
+// $ cast storage ${public_contract} to check stoage layout
